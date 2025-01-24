@@ -1,0 +1,59 @@
+.exo-2- {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+}
+#bakImg{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    filter: blur(4px);
+    z-index: -100;
+}
+.card{
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+#LogBTN{
+    width: 150px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+#log{
+    margin-top: 20px;
+}
+.UnP{
+    margin-top: -10px;
+    margin-right: 135px;
+}
+#Pass{
+    margin-top: -10px;
+}
+#inputPassword6{
+    width: 215px;
+}
+#Forgot{
+    margin-left: 95px;
+    font-size: 13px;
+}
+.card-title{
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+/*----------------------Home Page----------------------------------------------*/
+span {
+    font-weight: bold;
+    color: deeppink;
+}
