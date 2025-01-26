@@ -629,7 +629,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <main class="hero" id="Home">
-        <a href="adminDashboard.jsp">Admin Dashboard</a>
+      <%--  <a href="adminDashboard.jsp">Admin Dashboard</a>--%>
         <section class="home">
           <div class="home-text">
             <h1 class="animate__animated animate__pulse">Find your own  happiness</h1>
@@ -651,7 +651,6 @@
     </div>
     <div class="carousel-item">
       <main class="hero" id="Home2">
-        <%--<a href="#">Admin Dashboard</a>--%>
         <section class="home">
           <div class="home-text">
             <h1 class="animate__animated animate__pulse">Find your own  happiness</h1>

@@ -45,24 +45,23 @@ public class LoginServlet extends HttpServlet {
                 ResultSet resultSet = pstm.executeQuery();
 
                 if (resultSet.next()) {
-                    // Populate the UserDTO object
                     UserDTO userDTO = new UserDTO();
                     userDTO.setUser_id(resultSet.getInt("id")); // Assuming 'id' is the column name
                     userDTO.setEmail(resultSet.getString("email"));
                     userDTO.setPosition(resultSet.getString("position"));
 
                     if ("Admin".equalsIgnoreCase(userDTO.getPosition())) {
-                        // Redirect Admin to adminDashboard.jsp
+
                         resp.sendRedirect("adminDashboard.jsp?userId=" + userDTO.getUser_id());
                     } else if ("Customer".equalsIgnoreCase(userDTO.getPosition())) {
-                        // Redirect Customer to index.jsp
+
                         resp.sendRedirect("index.jsp?userId=" + userDTO.getUser_id());
                     } else {
-                        // Unknown position, redirect to login with error
+
                         resp.sendRedirect("login.jsp?error=Invalid User Role");
                     }
                 } else {
-                    // Invalid credentials
+
                     resp.sendRedirect("login.jsp?error=Invalid Credentials");
                 }
             }

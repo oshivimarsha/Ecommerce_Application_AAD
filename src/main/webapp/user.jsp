@@ -299,31 +299,22 @@
 
 <script>
 
-    // Handle Update Modal Population
     $(document).on('click', '#update-btn', function () {
-        // Extract data from the clicked button
         const userId = $(this).data('id');
         const name = $(this).data('username');
         const email = $(this).data('email');
         const position = $(this).data('position');
 
-        // Populate the Update Modal fields
         $('#user_id').val(userId);
         $('#user_name').val(name);
         $('#user_email').val(email);
         $('#user_position').val(position);
     });
 
-    // Handle Delete Modal Population
     const deleteUserModal = document.getElementById('deleteUserModal');
     deleteUserModal.addEventListener('show.bs.modal', function (event) {
-        // Button that triggered the modal
         const button = event.relatedTarget;
-
-        // Extract User ID from data-id attribute
         const userId = button.getAttribute('data-id');
-
-        // Set the hidden input value in the Delete Modal
         document.getElementById('UserId').value = userId;
     });
 

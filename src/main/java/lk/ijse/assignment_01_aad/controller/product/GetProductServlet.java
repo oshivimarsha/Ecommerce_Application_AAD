@@ -27,7 +27,6 @@ public class GetProductServlet extends HttpServlet {
         System.out.println("GET method called");
         List<ProductDTO> productList = new ArrayList<>();
 
-        // Use try-with-resources for proper resource management
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
@@ -35,7 +34,7 @@ public class GetProductServlet extends HttpServlet {
             String sql = "SELECT * FROM product";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-            // Iterate through the result set and create ProductDTO objects
+
             while (resultSet.next()) {
                 ProductDTO productDTO = new ProductDTO(
                         resultSet.getInt("id"),
@@ -51,10 +50,8 @@ public class GetProductServlet extends HttpServlet {
 
             System.out.println("Fetched all products");
 
-            // Attach the product list to the request object
             req.setAttribute("products", productList);
 
-            // Forward the request to the JSP file
             RequestDispatcher rd = req.getRequestDispatcher("product.jsp");
             rd.forward(req, resp);
 

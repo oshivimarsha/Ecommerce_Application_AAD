@@ -100,10 +100,6 @@
                     </ul>
                 </li>
             </ul>
-            <%--<form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>--%>
             <div class="icons d-flex align-items-center ms-3">
                 <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
@@ -152,7 +148,7 @@
                                 <button type="submit" class="btn btn-primary w-100">Login</button>
                             </form>
                         </div>
-                        <%
+                    <%--    <%
                             String message =  request.getParameter("loginError");
                             if (message != null) {
                                 System.out.println(message);
@@ -167,7 +163,7 @@
                         </script>
                         <%
                             }
-                        %>
+                        %>--%>
 
                         <!-- Register Tab -->
                         <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">

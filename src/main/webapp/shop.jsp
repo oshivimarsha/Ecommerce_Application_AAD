@@ -271,7 +271,7 @@
 </nav>
 
 <div class="container">
-    <!-- Sidebar Filter -->
+
     <aside class="filter">
         <h3>Filter by Category</h3>
         <ul class="category-list">
@@ -297,7 +297,7 @@
         </ul>
     </aside>
 
-    <!-- Product Section -->
+
     <main class="products filter">
         <h3>Selected Products will appear here</h3>
         <div id="product-display">
@@ -315,37 +315,37 @@
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item9.png" alt="Rose Bouquet">
+                    <img src="assets/images/item3.png" alt="Rose Bouquet">
                     <h3>Rose Bouquet</h3>
                     <p>$25.00</p>
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item6.png" alt="Sunflowers">
+                    <img src="assets/images/item4.png" alt="Sunflowers">
                     <h3>Sunflowers</h3>
                     <p>$20.00</p>
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item9.png" alt="Rose Bouquet">
+                    <img src="assets/images/item5.png" alt="Rose Bouquet">
                     <h3>Rose Bouquet</h3>
                     <p>$25.00</p>
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item6.png" alt="Sunflowers">
+                    <img src="assets/images/item7.png" alt="Sunflowers">
                     <h3>Sunflowers</h3>
                     <p>$20.00</p>
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item9.png" alt="Rose Bouquet">
+                    <img src="assets/images/item8.png" alt="Rose Bouquet">
                     <h3>Rose Bouquet</h3>
                     <p>$25.00</p>
                     <a href="#" class="btn">Add to Cart</a>
                 </div>
                 <div class="product-card">
-                    <img src="assets/images/item6.png" alt="Sunflowers">
+                    <img src="assets/images/item10.png" alt="Sunflowers">
                     <h3>Sunflowers</h3>
                     <p>$20.00</p>
                     <a href="#" class="btn">Add to Cart</a>

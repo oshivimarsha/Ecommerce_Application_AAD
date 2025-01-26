@@ -134,7 +134,7 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="height: 40px; margin-top: 10px; margin-left: 74px;">
             <button class="btn btn-btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink; width: 200px; height: 40px">Search</button>
         </form>
-        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="width: 250px; height: 40px">Add New Product</button>
+        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#addProductModal" style="width: 250px; height: 40px">Add New Product</button>
     </div>
 
     <table class="table table-bordered">
@@ -165,13 +165,8 @@
             <td><%= product.getQty() %></td>
             <td><img src="<%=request.getContextPath()%>/uploads/<%=product.getImage()%>" alt="Image" width="100"></td>
 
-            <%--<%
-                String message = request.getContextPath();
-            %>
-            <p>The message is: <%= message %></p>
---%>
             <td>
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#editProductModal"
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#updateProductModal"
                         data-id="<%= product.getProductId() %>"
                         data-name="<%= product.getName() %>"
                         data-description="<%= product.getDescription() %>"
@@ -248,7 +243,55 @@
     </div>
 </div>
 
-<!-- Edit and Delete Modals -->
+<!-- update Modals -->
+<div class="modal fade" id="updateProductModal" tabindex="-1" aria-labelledby="updateProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="product-save" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="UpdateProductModalLabel">Add Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" name="productId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" name="productName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description</label>
+                        <textarea class="form-control" id="Description" name="productDescription" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Category" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="Category" name="productCategory" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Price" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="Price" name="productPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Qty" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="Qty" name="productQty" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Image" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="Image" name="productImage" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Delete User Modal -->
 <div class="modal fade" id="deleteProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteUserModalLabel">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">

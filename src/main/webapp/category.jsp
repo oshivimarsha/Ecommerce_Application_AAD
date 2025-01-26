@@ -281,49 +281,27 @@
 
 </div>
 
-<!-- Footer-->
-<%--<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <p>© 2025 FloraShop. All Rights Reserved.</p>
-            <ul class="social-links">
-                <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
-                <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
-                <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
-                <li><a href="#"><i class="bx bxl-pinterest"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>--%>
 
-<!-- Include jQuery -->
+
 <script src="JQ/jquery-3.7.1.min.js"></script>
 
 <script>
 
-    // Handle Update Modal Population
     $(document).on('click', '#update-btn', function () {
-        // Extract data from the clicked button
         const categoryId = $(this).data('id');
         const name = $(this).data('name');
         const description = $(this).data('description');
 
-        // Populate the Update Modal fields
         $('#category_id').val(categoryId);
         $('#category_name').val(name);
         $('#category_description').val(description);
     });
 
-    // Handle Delete Modal Population
+
     const deleteCategoryModal = document.getElementById('deleteCategoryModal');
     deleteCategoryModal.addEventListener('show.bs.modal', function (event) {
-        // Button that triggered the modal
         const button = event.relatedTarget;
-
-        // Extract User ID from data-id attribute
         const categoryId = button.getAttribute('data-id');
-
-        // Set the hidden input value in the Delete Modal
         document.getElementById('CategoryId').value = categoryId;
     });
 

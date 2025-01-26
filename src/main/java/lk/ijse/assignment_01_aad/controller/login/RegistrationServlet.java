@@ -20,7 +20,6 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Retrieve form data
         String name = req.getParameter("registerName");
         String email = req.getParameter("registerEmail");
         String password = req.getParameter("registerPassword");
@@ -28,19 +27,18 @@ public class RegistrationServlet extends HttpServlet {
 
         System.out.println(name + " " + email + " " + password + " " + confirmPassword);
 
-        // Validate passwords
+
         if (!password.equals(confirmPassword)) {
             resp.sendRedirect("index.jsp?errorpassword=failed");
             return;
         }
 
         try {
-            // Load the MySQL driver
+
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Establish database connection
+
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-                // SQL query to insert a new user
                 String sql = "INSERT INTO users (name, email, password, position) VALUES (?, ?, ?, ?)";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                     preparedStatement.setString(1, name);

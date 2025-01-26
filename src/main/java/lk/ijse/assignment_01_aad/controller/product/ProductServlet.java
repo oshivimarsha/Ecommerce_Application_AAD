@@ -52,8 +52,8 @@ public class ProductServlet extends HttpServlet {
         Part filePart = req.getPart("productImage");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 
-        String uploadPath = "C:/Users/CHAMA COMPUTERS/IdeaProjects/Assignment_01_AAD/target/E-Commerrce_Web-1.0-SNAPSHOT/uploads"; // Set an external directory for file uploads
-        // String uploadPath = "C:/ecommerce/uploads"; // Set an external directory for file uploads
+        String uploadPath = "C:/Users/CHAMA COMPUTERS/IdeaProjects/Assignment_01_AAD/target/E-Commerrce_Web-1.0-SNAPSHOT/uploads";
+        // String uploadPath = "C:/ecommerce/uploads";
 
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {

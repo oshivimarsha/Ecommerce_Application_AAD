@@ -25,7 +25,7 @@ public class UserDeleteServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
-            String sql = "DELETE FROM users WHERE user_id = ?";
+            String sql = "DELETE FROM users WHERE id = ?";
             PreparedStatement pstm = connection.prepareStatement(sql);
             pstm.setString(1, customer_id);
 

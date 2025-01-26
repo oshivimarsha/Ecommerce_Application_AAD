@@ -11,13 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d031645-c2b3-4580-a9d7-b009e68174af" name="Changes" comment="Update projrct">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/ProductDeleteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/ProductUpdateServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/category/CategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/category/CategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/customer/GetAllProductServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/login/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/login/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/login/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/login/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/GetProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/GetProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/product/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminDashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserListServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/assignment_01_aad/controller/user/UserUpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/controller/HomeController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/store.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shop.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +250,7 @@
       <workItem from="1737693571961" duration="20342000" />
       <workItem from="1737779287067" duration="6469000" />
       <workItem from="1737811544342" duration="8188000" />
-      <workItem from="1737865442888" duration="14837000" />
+      <workItem from="1737865442888" duration="22662000" />
     </task>
     <task id="LOCAL-00001" summary="Add Ecommerce Application User ane product">
       <option name="closed" value="true" />
@@ -252,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737870725074</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update projrct">
+      <option name="closed" value="true" />
+      <created>1737896633795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737896633795</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

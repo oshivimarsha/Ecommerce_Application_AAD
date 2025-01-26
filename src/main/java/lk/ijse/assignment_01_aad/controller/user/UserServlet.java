@@ -86,14 +86,10 @@ public class UserServlet extends HttpServlet {
 
             System.out.println();
 
-
-            //Attaches the customers list to the request object , making it accessi
             req.setAttribute("users",userList);
 
-            //used to forward the request to jsp file
             RequestDispatcher rd = req.getRequestDispatcher("user.jsp");
 
-            //sends the request and response object to the specified jsp for rendering
             rd.forward(req, resp);
 
 
