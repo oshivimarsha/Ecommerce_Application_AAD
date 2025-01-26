@@ -1,5 +1,8 @@
 package lk.ijse.assignment_01_aad.controller.product;
 
+import com.google.gson.Gson;
+import com.mchange.v2.cfg.PropertiesConfigSource;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,7 +10,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import lk.ijse.assignment_01_aad.dto.ProductDTO;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -36,43 +41,64 @@ public class ProductServlet extends HttpServlet {
         String price = req.getParameter("productPrice");
         String qty = req.getParameter("productQty");
 
+        System.out.println(id);
+        System.out.println(name);
+        System.out.println(description);
+        System.out.println(category);
+        System.out.println(price);
+        System.out.println(qty);
+
+
         Part filePart = req.getPart("productImage");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 
+        String uploadPath = "C:/Users/CHAMA COMPUTERS/IdeaProjects/Assignment_01_AAD/target/E-Commerrce_Web-1.0-SNAPSHOT/uploads"; // Set an external directory for file uploads
+        // String uploadPath = "C:/ecommerce/uploads"; // Set an external directory for file uploads
 
-        String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
-            uploadDir.mkdir();
+            uploadDir.mkdirs();
         }
-        System.out.println("uploadPath = " + uploadPath);
 
-        String filePath = uploadPath + File.separator + fileName;
-        filePart.write(filePath);
+        System.out.println("id: " + id);
+        System.out.println("name: " + name);
+        System.out.println("description: " + description);
+        System.out.println("category: " + category);
+        System.out.println("price: " + price);
+        System.out.println("qty: " + qty);
 
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+        filePart.write(uploadPath + File.separator + fileName);
+        String imageUrl = "uploads/" + fileName;
+
+        System.out.println(imageUrl);
+
+
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
             String sql = "INSERT INTO product (id, name, description, category, price, qty, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            try (PreparedStatement pstm = connection.prepareStatement(sql)) {
-                pstm.setString(1, id);
-                pstm.setString(2, name);
-                pstm.setString(3, description);
-                pstm.setString(4, category);
-                pstm.setString(5, price);
-                pstm.setString(6, qty);
-                pstm.setString(7, "uploads/" + fileName);
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setString(1, id);
+            pstm.setString(2, name);
+            pstm.setString(3, description);
+            pstm.setString(4, category);
+            pstm.setString(5, price);
+            pstm.setString(6, qty);
+            pstm.setString(7, imageUrl);
 
-                int affectedRows = pstm.executeUpdate();
-                if (affectedRows > 0) {
-                    resp.sendRedirect("product-list?status=success");
-                } else {
-                    resp.sendRedirect("product-list?status=error");
-                }
+            int affectedRows = pstm.executeUpdate();
+            if (affectedRows > 0) {
+                resp.sendRedirect("product-list");
+            } else {
+                resp.sendRedirect("product-list");
             }
-        } catch (SQLException | ClassNotFoundException e) {
+
+            connection.close();
+
+        } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect("product-list?status=error");
+            resp.sendRedirect("product-list");
         }
     }
 }

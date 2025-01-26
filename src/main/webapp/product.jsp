@@ -97,32 +97,18 @@
                     <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: black;">Product</a>
+                    <a class="nav-link" href="product-list" style="color: black;">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: black;">Category</a>
+                    <a class="nav-link" href="category-save" style="color: black;">Category</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
-                        Manage
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
-                        <li><a class="dropdown-item" href="product-list">Product</a></li>
-                        <li><a class="dropdown-item" href="category-save">Category</a></li>
-                        <li><a class="dropdown-item" href="user-save">User</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-save" style="color: black;">User</a>
             </ul>
-            <%--<form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>--%>
+
             <div class="icons d-flex align-items-center ms-3">
                 <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
-                <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="userProfile.jsp" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
             </div>
@@ -146,9 +132,9 @@
     <div style="display: flex;">
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="height: 40px; margin-top: 10px; margin-left: 74px;">
-            <button class="btn btn-btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
+            <button class="btn btn-btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink; width: 200px; height: 40px">Search</button>
         </form>
-        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New Product</button>
+        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="width: 250px; height: 40px">Add New Product</button>
     </div>
 
     <table class="table table-bordered">
@@ -225,7 +211,7 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label for="productId" class="form-label">Name</label>
+                        <label for="productId" class="form-label">Id</label>
                         <input type="text" class="form-control" id="productId" name="productId" required>
                     </div>
                     <div class="mb-3">
@@ -263,7 +249,29 @@
 </div>
 
 <!-- Edit and Delete Modals -->
-<!-- Similar structure to Add Modal -->
+<!-- Delete User Modal -->
+<div class="modal fade" id="deleteProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteUserModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="deleteUserModalLabel">Are you sure?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                You won't be able to revert this!
+            </div>
+            <form id="deleteUserForm" action="product-delete" method="post">
+                <!-- Hidden input for User ID -->
+                <input type="hidden" id="product_id" name="productId">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-outline-danger">Yes, delete it!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <!-- Footer-->
 <%--<footer class="footer">
@@ -279,6 +287,48 @@
         </div>
     </div>
 </footer>--%>
+
+
+<!-- Include jQuery -->
+<script src="JQ/jquery-3.7.1.min.js"></script>
+
+<script>
+
+    // Handle Update Modal Population
+    $(document).on('click', '#update-btn', function () {
+        // Extract data from the clicked button
+        const userId = $(this).data('id');
+        const name = $(this).data('username');
+        const email = $(this).data('email');
+        const position = $(this).data('position');
+
+        // Populate the Update Modal fields
+        $('#user_id').val(userId);
+        $('#user_name').val(name);
+        $('#user_email').val(email);
+        $('#user_position').val(position);
+    });
+
+    // Handle Delete Modal Population
+    const deleteProductModal = document.getElementById('deleteProductModal');
+    deleteProductModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        const button = event.relatedTarget;
+
+        // Extract User ID from data-id attribute
+        const product_id = button.getAttribute('data-id');
+
+        // Set the hidden input value in the Delete Modal
+        document.getElementById('product_id').value = product_id;
+
+    });
+
+
+
+
+</script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JQ/jquery-3.7.1.min.js"></script>

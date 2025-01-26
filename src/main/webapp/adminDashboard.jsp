@@ -113,10 +113,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="user-save" style="color: black;">User</a>
             </ul>
-            <%--<form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>--%>
+
             <div class="icons d-flex align-items-center ms-3">
                 <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="userProfile.jsp" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
@@ -137,25 +134,25 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="stat-card">
-                    <h3>Products</h3>
+                    <h3>Category</h3>
                     <p class="stat-number">50</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
-                    <h3>Orders</h3>
+                    <h3>Users</h3>
                     <p class="stat-number">30</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
-                    <h3>Users</h3>
+                    <h3>Products</h3>
                     <p class="stat-number">100</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat-card">
-                    <h3>Categories</h3>
+                    <h3>Orders</h3>
                     <p class="stat-number">20</p>
                 </div>
             </div>

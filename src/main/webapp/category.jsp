@@ -99,32 +99,18 @@
                     <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: black;">Product</a>
+                    <a class="nav-link" href="product-list" style="color: black;">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: black;">Category</a>
+                    <a class="nav-link" href="category-save" style="color: black;">Category</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
-                        Manage
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
-                        <li><a class="dropdown-item" href="product-list">Product</a></li>
-                        <li><a class="dropdown-item" href="category-save">Category</a></li>
-                        <li><a class="dropdown-item" href="user-save">User</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-save" style="color: black;">User</a>
             </ul>
-            <%--<form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>--%>
+
             <div class="icons d-flex align-items-center ms-3">
                 <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
-                <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="userProfile.jsp" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
                 <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
             </div>
@@ -147,9 +133,9 @@
     <div style="display: flex;">
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="height: 40px; margin-top: 10px; margin-left: 74px;">
-            <button class="btn btn-btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
+            <button class="btn btn-btn btn-outline-success" type="submit" style="width: 250px; height: 40px; background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
         </form>
-        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New Category</button>
+        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="width: 250px; height: 40px">Add New Category</button>
     </div>
 
 
