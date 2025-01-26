@@ -1,6 +1,7 @@
 Flora Ecommerce Web Application 
 
 Project Description
+
 https://youtu.be/3qTdv558ANQ
 
 Flora website is a website that sells flowers. You can buy flowers here and bring them home. There are administer features and customer features. Product, category, user add, update, delete, view etc. are under admin features. User login, logout, product view is under customer features. This includes database, tomcat, JavaEE, jsp, boostrap use.
