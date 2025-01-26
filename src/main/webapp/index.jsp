@@ -21,7 +21,7 @@
     }
     span {
       font-weight: bold;
-      color: deeppink;
+      color: #f12f67;
       font-size: 35px;
       letter-spacing: 2px;
     }
@@ -32,6 +32,7 @@
       justify-content: space-between;
       margin-left: 100px;
       letter-spacing: 2px;
+      color: black;
     }
 
     .hero {
@@ -41,8 +42,11 @@
 
     .icons {
       font-size: 25px;
-      color: deeppink;
+      color: #f12f67;
+      gap: 20px;
     }
+
+    /*------------------------------------------------------------------*/
 
     h1 {
       font-weight: bold;
@@ -51,7 +55,7 @@
 
     .btn-pro i {
       margin-right: 10px;
-      color: #FF1493FF;
+      color: #f12f67;
       font-size: 20px;
     }
 
@@ -60,10 +64,10 @@
       display: inline-block;
       font-size: 1.2em;
       letter-spacing: 0.1em;
-      color: #FF1493FF;
+      color: #f12f67;
       text-decoration: none;
       text-transform: uppercase;
-      border: 2px solid #FF1493FF;
+      border: 2px solid #f12f67;
       padding: 10px 30px;
       z-index: 1;
       overflow: hidden;
@@ -77,7 +81,7 @@
     }
 
     .btn-pro i:hover {
-      color: deeppink;
+      color: #f12f67;
     }
 
     .btn-pro a::before {
@@ -87,7 +91,7 @@
       left: -50px;
       width: 0;
       height: 100%;
-      background-color: deeppink;
+      background-color: #f12f67;
       transform: skewX(35deg);
       z-index: -1;
       transition: 1s;
@@ -95,7 +99,7 @@
 
     .btn-pro a:hover:before {
       width: 100%;
-      background-color: deeppink;
+      background-color: #f12f67;
     }
 
     .home {
@@ -202,7 +206,7 @@
     .card-service:hover {
       background-color: transparent;
       transform: translateY(-8px);
-      border-color: deeppink;
+      border-color: #f12f67;
       /* box-shadow: 0 0 10px deeppink, 0 0 30px deeppink;*/
     }
 
@@ -251,7 +255,7 @@
     }
 
     .hero .btn {
-      background: #d93f6c;
+      background: #f12f67;
       color: #fff;
       padding: 10px 20px;
       text-decoration: none;
@@ -394,7 +398,7 @@
       width: 270px;
       background-color: transparent;
       padding: 3% 8%;
-      border: 0.2px solid deeppink;
+      border: 0.2px solid #f12f67;
       border-radius: 8px;
       transition: 0.6s;
       display: flex;align-items: center;
@@ -460,11 +464,11 @@
     .addToCartBtn {
       width: 150px;
       background-color: transparent;
-      border-color: deeppink;
+      border-color: #f12f67;
     }
 
     .addToCartBtn:hover {
-      background-color: deeppink;
+      background-color: #f12f67;
       color: white;
     }
 
@@ -492,7 +496,7 @@
       text-align: center;
       margin-bottom: 40px;
       font-size: 3rem;
-      color: #d32759;
+      color: #f12f67;
       font-weight: 800;
     }
 
@@ -516,7 +520,7 @@
     }
 
     .product-card img {
-      width: 100%;
+      width: 75%;
       height: 200px;
       object-fit: cover;
       border-bottom: 1px solid #ddd;
@@ -545,28 +549,20 @@
       background: #ff006b;
     }
 
-    /* Footer */
-    .footer {
-      background: #d32759;
-      color: #ffffff;
+    /* Footer ------------------------------------------------------------------------------------------------------- */
+    footer {
+      background-color: #343a40;
+      color: white;
       padding: 20px 0;
-      text-align: center;
     }
 
-    .footer .social-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
+    footer a {
+      color: deeppink;
+      text-decoration: none;
     }
 
-    .footer .social-links li {
-      margin: 0 10px;
-    }
-
-    .footer .social-links a {
-      color: #fff;
-      font-size: 1.5rem;
+    footer a:hover {
+      text-decoration: underline;
     }
 
   </style>
@@ -576,66 +572,64 @@
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand" href="#"><span>Flora</span></a>
+    <a class="navbar-brand" href="#"><span style="color: deeppink; font-weight: bold;">Flora</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-      <ul class="nav justify-content-center">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.jsp" style="color: black;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="shop.jsp">Shop</a>
+          <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
+          <a class="nav-link" href="#" style="color: black;">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Category</a>
+          <a class="nav-link" href="#" style="color: black;">Category</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle <!--disabled-->" href="#" role="button" data-bs-toggle="dropdown" aria-disabled="true">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
             Manage
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
             <li><a class="dropdown-item" href="product-list">Product</a></li>
-            <li><a class="dropdown-item" href="category.jsp">Category</a></li>
+            <li><a class="dropdown-item" href="category-save">Category</a></li>
             <li><a class="dropdown-item" href="user-save">User</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-
       </ul>
-      <form class="d-flex" role="search">
+      <%--<form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-      </form>
-
-      <div class="icons">
-        <a href="login.jsp"><i class='bx bx-log-in-circle' style="color: deeppink"></i></a>
-        <a href="#"><i class='bx bxs-user-circle'></i></a>
-        <a href="#"><i class='bx bxs-cart-add' ></i></a>
-        <a href="#"><i class='bx bx-log-out-circle' ></i></a>
-        <br>
+      </form>--%>
+      <div class="icons d-flex align-items-center ms-3">
+        <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+        <a href="userProfile.jsp" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+        <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
+        <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
       </div>
     </div>
   </div>
 </nav>
+
 
 <!--Main Page-->
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
       <main class="hero" id="Home">
-        <a href="#">Admin Dashboard</a>
+        <a href="adminDashboard.jsp">Admin Dashboard</a>
         <section class="home">
           <div class="home-text">
             <h1 class="animate__animated animate__pulse">Find your own  happiness</h1>
@@ -651,15 +645,13 @@
           <div class="home-img" data-aos="zoom-in">
             <img src="assets/images/flowerMain.png" title="my image" alt="my image" class="flower">
           </div>
-
         </section>
 
       </main>
     </div>
-
     <div class="carousel-item">
       <main class="hero" id="Home2">
-        <a href="#">Admin Dashboard</a>
+        <%--<a href="#">Admin Dashboard</a>--%>
         <section class="home">
           <div class="home-text">
             <h1 class="animate__animated animate__pulse">Find your own  happiness</h1>
@@ -673,31 +665,7 @@
           </div>
 
           <div class="home-img" data-aos="zoom-in">
-            <img src="assets/images/vase.png" title="my image" alt="my image" class="flower" style="width: 400px;">
-          </div>
-
-        </section>
-
-      </main>
-    </div>
-
-    <div class="carousel-item">
-      <main class="hero" id="Home3">
-        <a href="#">Admin Dashboard</a>
-        <section class="home">
-          <div class="home-text">
-            <h1 class="animate__animated animate__pulse">Find your own  happiness</h1>
-            <h3 class="animate__animated animate__pulse">Natural & Beautiful Flowers</h3>
-            <p class="animate__animated animate__pulse">Blooms that enchant, bouquets that delight! Explore our exquisite flower shop for a touch of elegance and beauty.
-            </p>
-
-            <div class="btn-pro">
-              <a href="#">Shop Now</a>
-            </div>
-          </div>
-
-          <div class="home-img" data-aos="zoom-in">
-            <img src="assets/images/wedding%20boq.png" title="my image" alt="my image" class="flower">
+            <img src="assets/images/HomeImg2.png" title="my image" alt="my image" class="flower" style="width: 600px;">
           </div>
 
         </section>
@@ -705,6 +673,7 @@
       </main>
     </div>
   </div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -721,6 +690,7 @@
     <div class="service-wrapper">
       <div class="service">
         <div class="cards-service">
+
           <div class="card-service" data-aos="flip-left">
             <img src="assets/images/card1.png" title="my image" alt="my image" class="girl">
             <h3>FARM-FRESH QUALITY</h3>
@@ -750,52 +720,53 @@
   <div class="container">
     <h2 class="section-title">Our Products</h2>
     <div class="product-grid">
+
       <div class="product-card">
         <img src="assets/images/item9.png" alt="Rose Bouquet">
         <h3>Rose Bouquet</h3>
-        <p>$25.00</p>
+        <p>Rs:2500.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item6.png" alt="Sunflowers">
         <h3>Sunflowers</h3>
-        <p>$20.00</p>
+        <p>Rs:1000.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item8.png" alt="Tulips">
         <h3>Tulips</h3>
-        <p>$18.00</p>
+        <p>Rs:1500.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/Item1.png" alt="Lilies">
         <h3>Lilies</h3>
-        <p>$22.00</p>
+        <p>Rs:2000.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item3.png" alt="Rose Bouquet">
         <h3>Rose Bouquet</h3>
-        <p>$25.00</p>
+        <p>Rs:2500.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item4.png" alt="Sunflowers">
         <h3>Sunflowers</h3>
-        <p>$20.00</p>
+        <p>Rs:1000.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item5.png" alt="Tulips">
         <h3>Tulips</h3>
-        <p>$18.00</p>
+        <p>Rs:1800.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
       <div class="product-card">
         <img src="assets/images/item6.png" alt="Lilies">
         <h3>Lilies</h3>
-        <p>$22.00</p>
+        <p>Rs:2200.00</p>
         <a href="#" class="btn">Add to Cart</a>
       </div>
     </div>
@@ -803,17 +774,9 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <p>© 2025 FloraShop. All Rights Reserved.</p>
-      <ul class="social-links">
-        <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
-        <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
-        <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
-        <li><a href="#"><i class="bx bxl-pinterest"></i></a></li>
-      </ul>
-    </div>
+<footer class="mt-5">
+  <div class="container text-center">
+    <p>&copy; 2025 Flora | All Rights Reserved. <a href="#">Privacy Policy</a></p>
   </div>
 </footer>
 

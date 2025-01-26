@@ -1,10 +1,11 @@
 <%--
+&lt;%&ndash;
   Created by IntelliJ IDEA.
   User: CHAMA COMPUTERS
   Date: 1/16/2025
   Time: 7:29 PM
   To change this template use File | Settings | File Templates.
---%>
+&ndash;%&gt;
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -54,7 +55,7 @@
                     </li>
                     <li class="nav-item">
                         <!--<span id="product-nav" class="nav-link">Product</span>-->
-                        <a class="nav-link" href="product.jsp">Product</a>
+                        <a class="nav-link" href="product-list">Product</a>
                     </li>
 
                     <li class="nav-item">
@@ -130,3 +131,4 @@
 <script src="assets/controller/HomeController.js" type="module"></script>
 </body>
 </html>
+--%>

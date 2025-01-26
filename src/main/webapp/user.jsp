@@ -13,17 +13,27 @@
         }
         span {
             font-weight: bold;
-            color: deeppink;
+            color: #f12f67;
             font-size: 35px;
             letter-spacing: 2px;
         }
+
         #navbarSupportedContent {
             text-align: center;
             justify-items: center;
             justify-content: space-between;
             margin-left: 100px;
             letter-spacing: 2px;
+            color: black;
         }
+
+
+        .icons {
+            font-size: 25px;
+            color: #f12f67;
+            gap: 20px;
+        }
+
         .btn-btn {
             width: 150px;
             background-color: transparent;
@@ -41,56 +51,69 @@
             margin-left: 75px;
             width: 1250px;
         }
+
+        /* Footer ------------------------------------------------------------------------------------------------------- */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: deeppink;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand" href="#"><span>Flora</span></a>
+        <a class="navbar-brand" href="#"><span style="color: deeppink; font-weight: bold;">Flora</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="nav justify-content-center">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.jsp" style="color: black;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">User</a>
+                    <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link" href="#" style="color: black;">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#" style="color: black;">Category</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <!--disabled-->" href="#" role="button" data-bs-toggle="dropdown" aria-disabled="true">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
                         Manage
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
-                        <li><a class="dropdown-item" href="product.jsp">Product</a></li>
-                        <li><a class="dropdown-item" href="category.jsp">Category</a></li>
+                        <li><a class="dropdown-item" href="product-list">Product</a></li>
+                        <li><a class="dropdown-item" href="category-save">Category</a></li>
                         <li><a class="dropdown-item" href="user-save">User</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>
-
-            <div class="icons">
-                <a href="login.jsp"><i class='bx bx-log-in-circle' style="color: deeppink"></i></a>
-                <a href="#"><i class='bx bxs-user-circle'></i></a>
-                <a href="#"><i class='bx bxs-cart-add' ></i></a>
-                <a href="#"><i class='bx bx-log-out-circle' ></i></a>
-                <br>
+            <%--<form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
+            </form>--%>
+            <div class="icons d-flex align-items-center ms-3">
+                <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
             </div>
         </div>
     </div>
@@ -258,18 +281,18 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteUserModalLabel">Confirm Delete</h5>
+                    <h1 class="modal-title" id="deleteUserModalLabel">Are you sure?</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this user?
+                    You won't be able to revert this!
                 </div>
                 <form id="deleteUserForm" action="user-delete" method="post">
                     <!-- Hidden input for User ID -->
                     <input type="hidden" id="UserId" name="userId">
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-outline-danger">Yes, delete it!</button>
                     </div>
                 </form>
             </div>
@@ -277,6 +300,13 @@
     </div>
 
 </div>
+
+<!-- Footer -->
+<footer class="mt-5">
+    <div class="container text-center">
+        <p>&copy; 2025 Flora | All Rights Reserved. <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
 
 <!-- Include jQuery -->
 <script src="JQ/jquery-3.7.1.min.js"></script>

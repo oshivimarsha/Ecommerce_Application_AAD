@@ -13,16 +13,31 @@
         }
         span {
             font-weight: bold;
-            color: deeppink;
+            color: #f12f67;
             font-size: 35px;
             letter-spacing: 2px;
         }
+
         #navbarSupportedContent {
             text-align: center;
+            justify-items: center;
             justify-content: space-between;
             margin-left: 100px;
             letter-spacing: 2px;
+            color: black;
         }
+
+        .hero {
+            background-color: #f3d4dd;
+            padding: 0 15%;
+        }
+
+        .icons {
+            font-size: 25px;
+            color: #f12f67;
+            gap: 20px;
+        }
+
         .btn-btn {
             width: 150px;
             background-color: transparent;
@@ -39,54 +54,101 @@
             margin-left: 75px;
             width: 1250px;
         }
+
+        /* Footer ------------------------------------------------------------------------------------------------------- */
+        .footer {
+            background: #d32759;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer .social-links li {
+            margin: 0 10px;
+        }
+
+        .footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
-<!-- Navbar -->
+<!--Nav Bar-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand" href="#"><span>Flora</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <a class="navbar-brand" href="#"><span style="color: deeppink; font-weight: bold;">Flora</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">User</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Category</a></li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.jsp" style="color: black;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: black;">Category</a>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Manage</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
+                        Manage
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
-                        <li><a class="dropdown-item" href="product.jsp">Product</a></li>
-                        <li><a class="dropdown-item" href="category.jsp">Category</a></li>
+                        <li><a class="dropdown-item" href="product-list">Product</a></li>
+                        <li><a class="dropdown-item" href="category-save">Category</a></li>
                         <li><a class="dropdown-item" href="user-save">User</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>
-            <div class="icons">
-                <a href="login.jsp"><i class='bx bx-log-in-circle' style="color: deeppink"></i></a>
-                <a href="#"><i class='bx bxs-user-circle'></i></a>
-                <a href="#"><i class='bx bxs-cart-add'></i></a>
-                <a href="#"><i class='bx bx-log-out-circle'></i></a>
+            <%--<form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
+            </form>--%>
+            <div class="icons d-flex align-items-center ms-3">
+                <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
             </div>
         </div>
     </div>
 </nav>
 
 <div class="container mt-5">
-    <h2>Product Management</h2>
-    <div class="d-flex justify-content-between mb-3">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success btn-btn">Search</button>
+    <section>
+        <div class="form-floating mb-3" style="font-size: 40px; font-weight: 600;">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/customer.png" alt="Customer" style="width: 60px; height: 60px;">
+                Product Management
+            </a>
+        </div>
+    </section>
+</div>
+
+<div class="container mt-5">
+
+    <div style="display: flex;">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="height: 40px; margin-top: 10px; margin-left: 74px;">
+            <button class="btn btn-btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
         </form>
-        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#addProductModal">Add New Product</button>
+        <button type="button" class="btn btn-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New Product</button>
     </div>
 
     <table class="table table-bordered">
@@ -115,7 +177,13 @@
             <td><%= product.getCategory() %></td>
             <td><%= product.getPrice() %></td>
             <td><%= product.getQty() %></td>
-            <td><img src="<%= request.getContextPath()%>/uploads/<%= product.getImage() %>" alt="Image" width="100"></td>
+            <td><img src="<%=request.getContextPath()%>/uploads/<%=product.getImage()%>" alt="Image" width="100"></td>
+
+            <%--<%
+                String message = request.getContextPath();
+            %>
+            <p>The message is: <%= message %></p>
+--%>
             <td>
                 <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#editProductModal"
                         data-id="<%= product.getProductId() %>"
@@ -196,6 +264,21 @@
 
 <!-- Edit and Delete Modals -->
 <!-- Similar structure to Add Modal -->
+
+<!-- Footer-->
+<%--<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>© 2025 FloraShop. All Rights Reserved.</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                <li><a href="#"><i class="bx bxl-pinterest"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>--%>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JQ/jquery-3.7.1.min.js"></script>

@@ -39,11 +39,13 @@ public class ProductServlet extends HttpServlet {
         Part filePart = req.getPart("productImage");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 
+
         String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
+        System.out.println("uploadPath = " + uploadPath);
 
         String filePath = uploadPath + File.separator + fileName;
         filePart.write(filePath);

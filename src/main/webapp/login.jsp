@@ -68,50 +68,47 @@
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand" href="#"><span>Flora</span></a>
+        <a class="navbar-brand" href="#"><span style="color: deeppink; font-weight: bold;">Flora</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="nav justify-content-center">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.jsp" style="color: black;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">User</a>
+                    <a class="nav-link" href="shop1.jsp" style="color: black;">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link" href="#" style="color: black;">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#" style="color: black;">Category</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <!--disabled-->" href="#" role="button" data-bs-toggle="dropdown" aria-disabled="true">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: black;">
                         Manage
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="customer-list">Customer</a></li>
-                        <li><a class="dropdown-item" href="product.jsp">Product</a></li>
-                        <li><a class="dropdown-item" href="category.jsp">Category</a></li>
-                        <li><a class="dropdown-item" href="user.jsp">User</a></li>
+                        <li><a class="dropdown-item" href="customer-list.jsp">Customer</a></li>
+                        <li><a class="dropdown-item" href="product-list">Product</a></li>
+                        <li><a class="dropdown-item" href="category-save">Category</a></li>
+                        <li><a class="dropdown-item" href="user-save">User</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
-            </form>
-
-            <div class="icons" style="width: 20px">
-                <a href="login.jsp"><i class='bx bx-log-in-circle' style="color: deeppink"></i></a>
-                <a href="#"><i class='bx bxs-user-circle'></i></a>
-                <a href="#"><i class='bx bxs-cart-add' ></i></a>
-                <a href="#"><i class='bx bx-log-out-circle' ></i></a>
-                <br>
+            <%--<form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" style="background-color: #f3d4dd; border-color: deeppink; color: deeppink;">Search</button>
+            </form>--%>
+            <div class="icons d-flex align-items-center ms-3">
+                <a href="login.jsp" class="me-2"><i class='bx bx-log-in-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-user-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#" class="me-2"><i class='bx bxs-cart-add' style="color: #000000; font-size: 1.5rem;"></i></a>
+                <a href="#"><i class='bx bx-log-out-circle' style="color: #000000; font-size: 1.5rem;"></i></a>
             </div>
         </div>
     </div>
@@ -143,37 +140,54 @@
                         <!-- Login Tab -->
                         <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                             <h1 class="text-center">Login</h1>
-                            <form>
+                            <form action="login" method="post">
                                 <div class="mb-3">
                                     <label for="loginEmail" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" name="loginEmail" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="loginPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" name="loginPassword" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100">Login</button>
                             </form>
                         </div>
+                        <%
+                            String message =  request.getParameter("loginError");
+                            if (message != null) {
+                                System.out.println(message);
+                        %>
+
+                        <script>
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Login Failed!",
+                            });
+                        </script>
+                        <%
+                            }
+                        %>
+
                         <!-- Register Tab -->
                         <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                             <h1 class="text-center">Register</h1>
-                            <form>
+                            <form action="register" method="post">
                                 <div class="mb-3">
                                     <label for="registerName" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="registerName" placeholder="Enter your full name" required>
+                                    <input type="text" class="form-control" id="registerName" placeholder="Enter your full name" name="registerName" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerEmail" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email" required>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email" name="registerEmail" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="registerPassword" placeholder="Create a password" required>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Create a password" name="registerPassword" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                                    <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm your password" name="registerConfirmPassword" required>
                                 </div>
                                 <button type="submit" class="btn btn-success w-100">Register</button>
                             </form>

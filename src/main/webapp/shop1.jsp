@@ -2,30 +2,28 @@
   Created by IntelliJ IDEA.
   User: CHAMA COMPUTERS
   Date: 1/24/2025
-  Time: 11:17 PM
+  Time: 12:59 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Shop</title>
-    <link rel="icon" type="imge/x-icon" href="Image/Hot%20Chili%20logo%20design%20template.jpg">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style/normalize.css">
-    <link rel="stylesheet" href="Style/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            background-color: #f3d4dd;
+        /* General Reset */
+     /*   * {
 
+        }*/
+
+        body {
+            background-color: #f9f9f9;
         }
+
         span {
             font-weight: bold;
-            color: #f12f67;
+            color: deeppink;
             font-size: 35px;
             letter-spacing: 2px;
         }
@@ -34,28 +32,19 @@
             text-align: center;
             justify-items: center;
             justify-content: space-between;
-            margin-left: 100px;
+            margin-left: 200px;
             letter-spacing: 2px;
             color: black;
         }
 
-        .hero {
-            background-color: #f3d4dd;
-            padding: 0 15%;
-        }
 
-        .icons {
-            font-size: 25px;
-            color: #f12f67;
-            gap: 20px;
-        }
 
         .container {
             display: flex;
             gap: 20px;
             width: 100%;
             max-width: 1500px;
-            margin: 0 auto;
+            justify-content: center;
             align-items: flex-start;
             padding: 20px;
         }
@@ -195,7 +184,7 @@
             background: #ff006b;
         }
 
-        /* Footer ------------------------------------------------------------------------------------------------------- */
+        /* Footer */
         .footer {
             background: #d32759;
             color: #ffffff;
@@ -234,7 +223,7 @@
                     <a class="nav-link active" aria-current="page" href="index.jsp" style="color: black;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="shop.jsp" style="color: black;">Shop</a>
+                    <a class="nav-link" href="shop1.jsp" style="color: black;">Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: black;">Product</a>
